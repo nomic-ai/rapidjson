@@ -158,7 +158,9 @@ ELSEIF(WIN32)
 ENDIF()
 SET(CMAKE_INSTALL_DIR "${_CMAKE_INSTALL_DIR}" CACHE PATH "The directory cmake files are installed in")
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_library(RapidJSON INTERFACE)
+add_library(RapidJSON::RapidJSON ALIAS RapidJSON)
+target_include_directories(RapidJSON INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if(RAPIDJSON_BUILD_DOC)
     add_subdirectory(doc)
