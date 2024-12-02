@@ -6,6 +6,10 @@ endif()
 if(POLICY CMP0054)
   cmake_policy(SET CMP0054 NEW)
 endif()
+if(POLICY CMP0077)
+  # Allow options to be overridden by parent project
+  cmake_policy(SET CMP0077 NEW)
+endif()
 
 SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
 
